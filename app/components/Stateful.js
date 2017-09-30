@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Stateful extends Component {
   render() {
-    return (<div>Hello: Statefull component</div>);
+    return (<div>React test component 2!</div>);
   }
 }
 

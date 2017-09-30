@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react';
 
-class PureFnInRender extends PureComponent {
+class PureWithFnInRenderMethod extends PureComponent {
   render() {
     return (
       <div ref={(ref) => { this.element = ref; }}>
-        Hello: Pure component with function in render
+        React test component 4!
       </div>);
   }
 }
 
-export default PureFnInRender;
+export default PureWithFnInRenderMethod;

@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 
 class Pure extends PureComponent {
   render() {
-    return (<div>Hello: Pure component</div>);
+    return (<div>React test component 3!</div>);
   }
 }
 

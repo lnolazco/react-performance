@@ -1,6 +1,7 @@
-import { createElement } from 'react';
+import React, { createElement } from 'react';
 import { render } from 'react-dom';
 
+import Chart from './components/Chart';
 import Stateless from './components/Stateless';
 import Stateful from './components/Stateful';
 import Pure from './components/Pure';
@@ -8,6 +9,8 @@ import PureFnInRender from './components/PureFnInRender';
 import PureFnOutRender from './components/PureFnOutRender';
 
 const max = 10000;
+
+const results = [];
 /*
 starts
 
@@ -34,6 +37,7 @@ const renderComponent = (Component, i) => {
 
 function performanceTest(cmp) {
   if (!cmp) {
+    renderResults();
     return;
   }
   let iterations = max;
@@ -43,13 +47,21 @@ function performanceTest(cmp) {
     renderComponent(cmp, iterations);
   }
   console.log(`Time: %c${Math.round(performance.now() - prevTime)}ms`, 'color:blue');
+  results.push({ y: performance.now() - prevTime, x: cmp.name });
 
   setTimeout(evaluateNextComponent, 500);
+}
+
+function renderResults() {
+  render(
+    <Chart max={max} data={results} />,
+    document.getElementById('root'),
+  );
 }
 
 function evaluateNextComponent() {
   performanceTest(cmpSwitcher.next().value);
 }
 
-console.log(`Starting ${max} tests with %cReact 16 (Fiber)...`, 'font-weight: bold');
+console.log(`Starting ${max} tests with React 16 (Fiber)...`, 'font-weight: bold');
 evaluateNextComponent();

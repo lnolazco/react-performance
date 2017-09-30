@@ -1,14 +1,14 @@
 import React, { PureComponent } from 'react';
 
-class PureFnOutRender extends PureComponent {
+class PureWithFnOutOfRenderMethod extends PureComponent {
   refElement = (e) => { this.element = e; };
 
   render() {
     return (
       <div ref={this.refElement}>
-        Hello: Pure component with function out of render
+        React test component 5!
       </div>);
   }
 }
 
-export default PureFnOutRender;
+export default PureWithFnOutOfRenderMethod;
