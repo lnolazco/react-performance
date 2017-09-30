@@ -1,6 +1,9 @@
 # REACT 16 PERFORMANCE
 
-*This is based on my repo: https://github.com/lnolazco/react-boilerplate*
+*This is based on my repo: https://github.com/lnolazco/react-boilerplate*.
+
+I used React-easy-chart to display the results.
+https://rma-consulting.github.io/react-easy-chart/
 
 Tests:
 - Stateless components
@@ -18,8 +21,8 @@ Node.js v8
 ## Starting the test performance
 - Start the app `npm start`
 - Open automatically [http://localhost:8080](http://localhost:8080)
-- Open console window and check the results.
+- See the results :)
 
 ## Todo
 - Add more performance tests.
-- Keep internally in a variable the results and add a chart where to display the results (d3).
+- Add input to set the number of tests to run.
